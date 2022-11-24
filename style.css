@@ -39,3 +39,15 @@ body {
 .container{
     max-width: none;
 }
+
+.media-object{
+  width: 100%;
+  height: auto;
+  /* Magic! */
+  max-width: 5vw;
+  margin: 2em;
+}
+
+.media-body{
+    margin: 2em;
+}
