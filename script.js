@@ -23,7 +23,7 @@ class customHeader extends HTMLElement {
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="skills.html">Skills</a>
-            <a class="dropdown-item" href="#">GitHub Profile</a>
+            <a class="dropdown-item" href="https://github.com/jaydenramhit" target="_blank">GitHub Profile</a>
           </div>
         </li>
       </ul>
