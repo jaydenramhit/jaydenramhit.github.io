@@ -46,6 +46,7 @@ body {
   /* Magic! */
   max-width: 5vw;
   margin: 2em;
+  border-radius: 15%;
 }
 
 .media-body{
