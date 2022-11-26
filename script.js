@@ -2,7 +2,7 @@ class customHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Jayden Ramhit</a>
+    <a class="navbar-brand" href="index.html">Jayden Ramhit</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -76,13 +76,6 @@ class customFooter extends HTMLElement {
 
   </div>
   <!--Grid row-->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="https://github.com/jaydenramhit" target="_blank">Jayden Ramhit</a>
-  </div>
-  <!-- Copyright -->
         `
     }
 }
