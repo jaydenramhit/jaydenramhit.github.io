@@ -93,3 +93,23 @@ body {
 #skills-blurb{
     text-align: center;
 }
+
+.wrap{
+    font-size: 0.5em;
+}
+
+.fa-ul{
+    text-align: left;
+}
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}

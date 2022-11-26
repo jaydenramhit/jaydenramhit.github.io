@@ -41,8 +41,8 @@ class customFooter extends HTMLElement {
         <!-- Grid container -->
   <div class="container p-4">
     <!--Grid row-->
-    <div class="row mt-4" id="footer-content">
-      <div>
+    <div class="row" id="footer-content">
+      <div class="footer-info">
         <ul class="fa-ul" style="margin-left: 1.65em;">
           <li class="mb-3">
             <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Montréal, Québec.</span>
@@ -66,18 +66,12 @@ class customFooter extends HTMLElement {
       </div>
       <!--Grid column-->
 
-      <div class="mt-4" style="margin-left: 1.65em;">
-        <!-- Facebook -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-facebook-f"></i></a>
-        <!-- Dribbble -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-dribbble"></i></a>
-        <!-- Twitter -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-twitter"></i></a>
-        <!-- Google + -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-google-plus-g"></i></a>
+      <div class="mt-4 footer-links" style="margin-left: 1.65em;">
+        <!-- Github -->
+        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-github"></i></a>
         <!-- Linkedin -->
+        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-linkedin"></i></a>
       </div>
-
     </div>
 
   </div>
@@ -94,3 +88,61 @@ class customFooter extends HTMLElement {
 }
 
 customElements.define('custom-footer', customFooter)
+
+//made by vipul mirajkar thevipulm.appspot.com
+var TxtType = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+  this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+  this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 200 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+  delta = this.period;
+  this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+  this.isDeleting = false;
+  this.loopNum++;
+  delta = 500;
+  }
+
+  setTimeout(function() {
+  that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('typewrite');
+  for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-type');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  document.body.appendChild(css);
+};
