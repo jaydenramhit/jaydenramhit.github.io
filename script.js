@@ -68,9 +68,9 @@ class customFooter extends HTMLElement {
 
       <div class="mt-4 footer-links" style="margin-left: 1.65em;">
         <!-- Github -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-github"></i></a>
+        <a type="button" class="btn btn-floating btn-dark btn-lg" href="https://github.com/jaydenramhit" target="_blank"><i class="fab fa-github"></i></a>
         <!-- Linkedin -->
-        <a type="button" class="btn btn-floating btn-dark btn-lg"><i class="fab fa-linkedin"></i></a>
+        <a type="button" class="btn btn-floating btn-dark btn-lg" href="https://www.linkedin.com/in/jayden-ramhit-430778203/?originalSubdomain=ca" target="_blank"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
 
