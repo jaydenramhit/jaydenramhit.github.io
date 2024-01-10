@@ -60,8 +60,7 @@ class customFooter extends HTMLElement {
       <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
         <h5 class="text-uppercase mb-4">About me</h5>
         <p>
-          I'm a third year Computer Science Student at John Abbott College, I
-          enjoy software development and hope to one day work in the automotive industry.
+          I enjoy software development and hope to one day work in the automotive industry.
         </p>
       </div>
       <!--Grid column-->
